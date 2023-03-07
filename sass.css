@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #262626;
+  color: white;
+  display: grid;
+  grid-template-areas: "header header header" "about about about" "photo photo photo" "footer footer footer";
+  grid-template-rows: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.header {
+  grid-area: header;
+  align-items: center;
+  border: 1px solid rgb(255, 255, 255);
+  background-image: url("./bg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.header .brand {
+  grid-area: header;
+  padding: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header .brand .logo {
+  padding: 10px;
+}
+.header .brand h1 {
+  padding-bottom: 3px;
+}
+.header .header-banner {
+  grid-area: header;
+  grid-area: 2/1/3/4;
+  justify-content: center;
+}
+
+.about-us {
+  grid-area: about;
+  border: 1px solid rgb(255, 255, 255);
+  display: grid;
+  grid-template-columns: 4fr 6fr;
+  align-items: center;
+}
+.about-us .left {
+  position: relative;
+  left: -200px;
+}
+@media only screen and (max-width: 600px) {
+  .about-us .left {
+    display: none;
+  }
+}
+.about-us .right {
+  text-align: center;
+}
+
+.photos {
+  grid-area: photo;
+  border: 1px solid rgb(255, 255, 255);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 30vw;
+  overflow: hidden;
+}
+.photos img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+footer {
+  grid-area: footer;
+  border: 1px solid rgb(255, 255, 255);
+}/*# sourceMappingURL=sass.css.map */

@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$primary_color: #D3AB55;
+$secondaryS_color: white;
+$background_color: #262626;
+$margin: 20px;
+
+$font_family: Dancing Script , cursive;
+$font_size_xlarge: 60px;
+$font_size_large: 50px;
+$font_size_medium: 30px;
+$font_size_small: 14px;
+$font_size_title: 40px;
+$font_size_paragraph: 18px;
+$border_radius: 30px;
+
+body {
+    background-color: $background_color;
+    color: $secondaryS_color;
+    display: grid;
+    grid-template-areas:
+    "header header header"
+    "about about about"
+    "photo photo photo"
+    "footer footer footer" ;
+    
+    grid-template-rows: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;            
+}
+
+.header {
+
+        
+        grid-area: header;
+        align-items: center;
+        border: 1px solid rgb(255, 255, 255);
+
+        background-image: url("./bg.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;        
+
+    .brand {
+        
+        grid-area: header;
+        padding: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+
+    }
+
+    .brand .logo {
+        padding: 10px;
+    }
+
+    .brand h1 {
+        padding-bottom: 3px;
+    }
+
+
+    .header-banner {
+        
+        grid-area: header;
+        grid-area: 2 / 1 / 3 / 4;
+        justify-content: center;
+    }
+
+}
+
+.about-us {
+        
+    grid-area: about;
+    border: 1px solid rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    align-items: center;
+    
+        .left {
+            position: relative;
+            left: -200px;
+
+            @media only screen and (max-width: 600px) {
+                display: none;
+            }
+        
+            
+        }
+
+        .right {
+
+            text-align: center;
+            
+        }
+    }
+
+.photos {
+        grid-area: photo;
+
+        border: 1px solid rgb(255, 255, 255);
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows: 30vw;
+        overflow: hidden;
+
+        img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+
+        }
+    }
+
+footer {
+        grid-area: footer;
+
+        border: 1px solid rgb(255, 255, 255);
+
+    
+    }
+
+
